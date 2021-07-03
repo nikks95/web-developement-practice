@@ -1,0 +1,130 @@
+body {
+    background-color: rgb(204, 210, 219);
+}
+.mycontainer {
+    width: 100%;
+
+}
+.myjumbotron {
+    width: 100%;
+    padding: 0.5rem 4rem 4rem 2rem; /* top right bottom left*/
+    background-color: whitesmoke;
+}
+
+.myjumbotron > .myjumbo-heading {
+    font-size: 32pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin: 0rem 0rem 0rem 0rem;
+}
+
+.myjumbotron > .myjumbo-desc {
+    margin: 0rem 0rem 0rem 0rem;
+    font-size: 8pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: rgb(160, 160, 160);
+}
+
+[class*="mycol-"] {
+    display: inline-flex;
+    width: 100%;
+  }
+  
+@media only screen and (min-width: 768px) {
+    .mycol-1 {width: 9%;}
+    .mycol-2 {width: 19%;}
+    .mycol-3 {width: 29%;}
+    .mycol-4 {width: 39%;}
+    .mycol-5 {width: 49%;}
+    .mycol-6 {width: 59%;}
+    .mycol-7 {width: 69%;}
+    .mycol-8 {width: 79%;}
+    .mycol-9 {width: 89%;}
+    .mycol-10 {width: 100%;}
+  }
+
+.mydata{
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+}
+.mycard {
+    border-radius: 0.2rem;
+    margin: 0.6rem 0.1rem 0.6rem 0rem; /* top right bottom left*/
+    background-color: rgb(228, 230, 231);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mycard-header{
+    font-size: 10pt;
+    padding: 1rem 0rem 0rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin: 0rem 0rem 0rem 0rem;
+}
+
+.mycard-body{
+    padding: 1rem 0rem 1rem 1rem;
+    font-size: 10pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0rem 0rem 0rem 0rem;
+    color: rgb(160, 160, 160);
+}
+.grey-font{
+    font-size: 10pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: rgb(160, 160, 160);
+}
+.mydata-heading{
+    font-size: 22pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: rgb(22, 21, 83);
+}
+.mycard-footer{
+    
+    background-color: #dbdad1;
+}
+.mycard-footer > ul {
+    padding: 1rem 0rem 1rem 2rem;
+    list-style-image: url('../star.png');
+}
+.mycard-footer > ul > li{
+    font-size: 10pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: rgb(122, 94, 0);
+}
+
+.mycard-list-item-icon {
+
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 0.2rem 1rem 0.2rem;
+    
+}
+.mycard-head{
+    font-size: 20pt;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+.mycard-list-data{
+    display: inline-flex;
+}
+.mycard-list{
+    padding: 2rem 2rem 2.4rem 2rem;
+    border-radius: 0.2rem;
+    width: 100%;
+    margin: 0.6rem 0.1rem 0.6rem 0rem; /* top right bottom left*/
+    background-color: rgb(228, 230, 231);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.line-break{
+    width: 100%;
+}
+.line-break > hr {
+    width: 100%;
+    margin: auto;
+}
