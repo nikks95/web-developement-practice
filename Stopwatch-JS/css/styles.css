@@ -1,0 +1,14 @@
+.time-values {
+    display: inline-flex;
+}
+.right-btn{
+    margin-top: 10%;
+    float: right;
+}
+.mid-btn{
+    margin: 10% auto auto 50%;
+}
+.left-btn{
+    margin-top: 10%;
+    float: left;
+}
