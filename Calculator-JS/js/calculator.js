@@ -36,16 +36,19 @@ let evalExp = (opr1, opr2, op) => {
     return result;
 }
 let checknum = (ch, f = true) => {
-
-    if ((ch >= '0' && ch <= '9')) {
-
-        if (f == true && ch == '.')
+    if (f == true) {
+        if ((ch >= '0' && ch <= '9') || ch == '.') {
             return true;
-        else if (f == false && ch == '.')
+        } else {
             return false;
-        return true;
-    } else {
-        return false;
+        }
+    }
+    else{
+        if(parseInt(ch)/1==ch){
+            return true;
+        }
+        else return false;
+
     }
 }
 let opPrecedence = (ch) => {
@@ -73,9 +76,10 @@ let splitify = (exp) => {
     let arr = [];
     start = 0;
     for (let i = 0; i < len; i++) {
-        if (checkop(exp.charAt(i))) {
+        if (checkop(exp.charAt(i)) &&
+            (!(checkop(exp.charAt(i - 1)) && exp.charAt(i) == '-')) &&
+            !(i == 0 && exp.charAt(i) == '-')) {
             let s = "";
-
             for (let j = start; j < i; j++) {
                 s += exp.charAt(j);
             }
@@ -100,9 +104,9 @@ function validNumber(x) {
 function validateInput(expression) {
     for (let i = 0; i < expression.length; i++) {
         if (checkop(expression[i])) {
-            if (i == 0) throw "Invalid Expression, expression does not starts with operator";
+            if (checkop(expression[i]) != '-' && i == 0) throw "Invalid Expression, expression does not starts with operator";
             else {
-                if (checkop(expression[i - 1])) {
+                if (checkop(expression[i - 1] && checkop(expression[i - 1]) != '-')) {
                     throw "Invalid Expression, Operator does not follow operator";
                 }
             }
@@ -122,7 +126,7 @@ function evaluateExpression(expression) {
         for (let i = 0; i < len; i++) {
             if (!checkop(expression[i])) {
                 operandStack.push(parseFloat(expression[i]));
-                
+
             }
             else {
                 if (operatorStack.length > 0) {
@@ -133,14 +137,14 @@ function evaluateExpression(expression) {
                         op = operatorStack.pop();
                         let result = evalExp(opr1, opr2, op);
                         operandStack.push(result);
-                        
+
                     }
                     operatorStack.push(expression[i]);
-                   
+
                 }
                 else {
                     operatorStack.push(expression[i]);
-                   
+
                 }
             }
         }
@@ -154,8 +158,8 @@ function evaluateExpression(expression) {
         }
     }
     catch (e) {
-         alert(e + ": Invalid operation");
-         return "";
+        alert(e + ": Invalid operation");
+        return "";
     }
     return operandStack[0];
 }
@@ -169,7 +173,7 @@ function calculate() {
             result = evaluateExpression(expression);
         }
         catch (e) {
-         alert("" + e);
+            alert("" + e);
         }
         inputbox.value = result;
     }
